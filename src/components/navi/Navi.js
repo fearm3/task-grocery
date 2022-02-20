@@ -16,7 +16,7 @@ const Navi = () => {
       <Navbar color="secondary" expand="md" dark>
         <NavbarBrand>
           <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-            Northwind Marketplace
+            Aloha Grocery
           </Link>
         </NavbarBrand>
         <NavbarToggler onClick={function noRefCheck() {}} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
+const NumberInput = ({ name, label, onChange, placeHolder, value, error }) => {
   //! bootstrap ile alakalı
   let wrapperClass = "form-group";
 
@@ -13,7 +13,7 @@ const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
       <label htmlFor={name}>{label}</label>
       <div className="field">
         <input
-          type="text"
+          type="number"
           name={name}
           className="form-control"
           placeholder={placeHolder}
@@ -26,4 +26,4 @@ const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
   );
 };
 
-export default TextInput;
+export default NumberInput;
