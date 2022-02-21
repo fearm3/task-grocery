@@ -67,26 +67,4 @@ const ProductList = () => {
   );
 };
 
-//? mapStateToProps yerine useSelector hook'unu kullanıyoruz.
-// const mapStateToProps = state => {
-//   return {
-//     //! currentCategory --> state içerisinden changeCategoryReducer'a map et
-//     currentCategory: state.changeCategoryReducer,
-//     products: state.productListReducer
-//   };
-// };
-
-//? mapDispatchToProps yerine useDispatch hook'unu kullanıyoruz.
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     actions: {
-//       //   //! bu fonk ile categories içine verileri atıyoruz. useEffect kullanıyoruz.
-//       getProducts: bindActionCreators(productActions.getProducts, dispatch),
-//       //! sepete ekleyeceğimiz ürünün action'u burada kullanıyoruz.
-//       addToCart: bindActionCreators(cartActions.addToCart, dispatch)
-//     }
-//   };
-// };
-
-// export default connect(mapStateToProps)(ProductList);
 export default ProductList;

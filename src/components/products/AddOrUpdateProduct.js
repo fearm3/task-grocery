@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as productActions from "../../redux/actions/productActions";
 import ProductDetail from "./ProductDetail";
 
-//! ...props --> mevcut propları genişletiyoruz.
+//! ...props --> extends props
 const AddOrUpdateProduct = ({
   products,
 
@@ -19,10 +19,10 @@ const AddOrUpdateProduct = ({
   //! validation
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  //! useParams ile product id'yi alıyoruz.
+  //! with useParams get  product ids
   const { productId } = useParams();
   // console.log(productId);
-  //! useSelector ve find metodlarını kullanarak update edilecek product'ı buluyoruz.
+  //! useSelector ve find  methods to find update product
   const items = useSelector((state) => state.productListReducer);
   const item = productId && items.find((item) => item.id === productId);
   // console.log(item);
@@ -33,10 +33,10 @@ const AddOrUpdateProduct = ({
   }, [item]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target; //! eventin içerisindeki name ve value değerlerini destructuring yapıyoruz.
+    const { name, value } = event.target; //! event destructuring
     setProduct((previousProduct) => ({
       ...previousProduct,
-      [name]: name === "categoryId" ? parseInt(value, 10) : value, //! categoryId inputu ise numbera çevir yoksa gerek yok.
+      [name]: name === "categoryId" ? parseInt(value, 10) : value,
     }));
     //! validation
     validate(name, value);
@@ -57,9 +57,10 @@ const AddOrUpdateProduct = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(productActions.saveProductAPI(product));
-    // navigate(-1); //! bir önceki sayfaya gider
+    // navigate(-1); //! go back
     navigate("/", { replace: true });
   };
+  //! my category as a hardcoded!
   const categories = [
     {
       id: 1,

@@ -1,12 +1,12 @@
-import * as actionTypes from '../actions/actionTypes';
-import initialState from './initialState';
+import * as actionTypes from "../actions/actionTypes";
+import initialState from "./initialState";
 
 export const productListReducer = (state = initialState.products, action) => {
   switch (action.type) {
-    //! aksiyona category yolluyoruz. reducer'dan gelen aksiyonun payload'ını return ediyoruz.
+    //! send category to actions and return action.payload from  reducer
     case actionTypes.GET_PRODUCTS_SUCCESS:
       return action.payload;
-    //! return edilen bizim state'miz
+    //! return state
 
     default:
       return state;

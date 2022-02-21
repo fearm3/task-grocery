@@ -1,7 +1,7 @@
 import React from "react";
 
 const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
-  //! bootstrap ile alakalı
+  //! about bootstrap
   let wrapperClass = "form-group";
 
   if (error && error.length > 0) {

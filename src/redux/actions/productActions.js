@@ -12,7 +12,7 @@ import { successNote } from "../../components/root/CustomToastify";
 import { db } from "../../firebase/firebase";
 import * as actionTypes from "./actionTypes";
 
-//! ürün çağırma
+//! get product
 export const getProductsSuccess = (payload) => {
   return {
     type: actionTypes.GET_PRODUCTS_SUCCESS,
@@ -26,20 +26,20 @@ export const removeProductSuccess = (payload) => {
   };
 };
 
-//! ÜRÜN EKLEME
+//! add product
 export const createProductSuccess = (product) => ({
   type: actionTypes.CREATE_PRODUCT_SUCCESS,
   payload: product,
 });
 
-//! ÜRÜN GÜNCELLEME
+//! update product
 export const updateProductSuccess = (product) => ({
   type: actionTypes.UPDATE_PRODUCT_SUCCESS,
   payload: product,
 });
 
 //* -----------------------------
-//! id ile seçili ürünü listeleme
+//! list product with id
 //* -----------------------------
 export const getProducts = () => {
   return async (dispatch) => {
@@ -60,7 +60,7 @@ export const getProducts = () => {
 };
 
 //*--------------------------------------------------------------------------------
-//! ürün ekleme / ürün güncelleme ( id geldiyse --> update, id gelmediyse --> add)
+//! add product /update product ( if there is id   --> update, not id --> add)
 //*-------------------------------------------------------------------------------
 export const saveProductAPI = (product) => {
   console.log("product", product);
